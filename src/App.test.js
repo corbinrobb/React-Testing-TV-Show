@@ -24,4 +24,10 @@ test("Renders episode cards from API when clicked", async () => {
   const episodes = await getAllByTestId(/episode/i);
 
   expect(episodes).toHaveLength(8);
+
+  userEvent.click(episodes[1]);
+
+  const selectedEpisode = await findByText(/the mall rats/i);
+
+  expect(selectedEpisode).toBeInTheDocument();
 })

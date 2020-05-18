@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
 export default function Episodes(props) {
   return (
     <div className="episodes">
       {props.episodes.map(e => (
-        <div data-testid= "episode" className="episode" key={e.id}>
+        <Link to={`/episode/${e.id}`} onClick={() => props.setSelectedEpisode(e)} data-testid= "episode" className="episode" key={e.id}>
           {e.image && (
             <img className="episode-image" src={e.image.medium} alt={e.name} />
           )}
@@ -18,7 +19,7 @@ export default function Episodes(props) {
             <div className="flex-spacer" />
             <p className="episode-runtime">{e.runtime} minutes</p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
