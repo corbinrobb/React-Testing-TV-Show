@@ -104,3 +104,20 @@ p.episode-runtime {
   margin-top: 8px;
   font-size: 0.8rem;
 }
+
+.selected-episode {
+  display: flex;
+  flex-direction: column;
+  background-color: #0c0c2bd3;
+  color: #070724;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #ffffff;
+  margin: 16px;
+}
+
+.selected-episode > * {
+  width: 50%;
+  margin: 0 auto;
+}
